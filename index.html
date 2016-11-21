@@ -259,6 +259,51 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Posibility Graphical Model" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/21/Posibility Graphical Model/" class="article-date">
+      <time datetime="2016-11-21T09:40:05.945Z" itemprop="datePublished">2016-11-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>Bayesian Network: A <strong>DAG</strong> whose <strong>nodes</strong> represent the random <strong>variables</strong>:<br>$X_1,..,X_n$<br>For each node $X_i$ : $P(X_i | Par_G(X_i))$<br>$Par_G$:$X_i$的父节点<br><strong>BN</strong> represents the <strong>joint distribution</strong>：<br>$P(X_1…X_i)=\prod_iP(X_i | Par_G(X_i))$ &gt;= 0 <strong>(chain Rule)</strong><br>$\sum P(X_1…X<em>i)=1$<br>原因如下：<br>$\sum</em>{D,I,G,S,L}P=\sum_{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>而$\sum<em>LP(L|G)=1$<br>所以<br>$\sum</em>{D,I,G,S,L}P=\sum<em>{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>$=\sum</em>{D,I,G,S}P(D)P(I)P(G|D,I)P(S|I)$<br>$=\sum_{D,I}P(D)P(I)$<br>$=1$<br>如果一个节点的父节点已知，则这个节点仅仅对它自己的子节点(以及子节点的子节点)独立，而对其他非子节点都不独立</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-machine_learning" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
