@@ -73,7 +73,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -107,6 +107,13 @@
         <p class="header-subtitle">Stay hungry,Stay foolish.</p>
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -1159,7 +1166,7 @@ ln -s /usr/bin/env env
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>degenerate ：退化<br>acyclic:无环<br>GAD：directed acyclic graph<br>tedious：无聊乏味的<br>scenario:情景<br>intricate:错综复杂的<br>manifest:vt 显示<br>recurring:复发<br>propagation:传播 eg.noise propagation<br>epiphyte：真菌<br>secreted:尤其指（动植物器官）分泌！！<br>asympototically:渐进的<br>quadratic：二次的<br>auditory cortex:听觉皮质<br>dentrite:树突<br>nucleus：细胞核<br>axon:轴突<br>myelin sheath:髓鞘<br>node of Ranvier:郎飞结<br>schwann cell：施万细胞<br>axon terminal:轴突末端</p>
+        <p>degenerate ：退化<br>acyclic:无环<br>GAD：directed acyclic graph<br>tedious：无聊乏味的<br>scenario:情景<br>intricate:错综复杂的<br>manifest:vt 显示<br>recurring:复发<br>propagation:传播 eg.noise propagation<br>epiphyte：真菌<br>secreted:尤其指（动植物器官）分泌！！<br>asympototically:渐进的<br>quadratic：二次的<br>auditory cortex:听觉皮质<br>dentrite:树突<br>nucleus：细胞核<br>axon:轴突<br>myelin sheath:髓鞘<br>node of Ranvier:郎飞结<br>schwann cell：施万细胞<br>axon terminal:轴突末端<br>analogous to :与何事类似<br>eg:<br>The gills of fishes are analogous to the lungs in terrestrial animals.<br>鱼类的鳃与陆上动物的肺类似</p>
 
       
     </div>
