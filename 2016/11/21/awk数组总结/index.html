@@ -15,22 +15,25 @@
 
 
 
-<meta name="description" content="1.Linear RegressionAs an initial choice: y as a linear function of x:
-$h{\theta}(x{i})=\theta^T*x_{i}$ The cost function:
-$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
+<meta name="description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
+
+在读入单个文件相同时，二者相同
+在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Supervised learning">
-<meta property="og:url" content="http://yoursite.com/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/index.html">
+<meta property="og:title" content="awk数组总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/21/awk数组总结/index.html">
 <meta property="og:site_name" content="Shirley Wang">
-<meta property="og:description" content="1.Linear RegressionAs an initial choice: y as a linear function of x:
-$h{\theta}(x{i})=\theta^T*x_{i}$ The cost function:
-$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
-<meta property="og:updated_time" content="2016-11-21T11:04:40.094Z">
+<meta property="og:description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
+
+在读入单个文件相同时，二者相同
+在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
+<meta property="og:updated_time" content="2016-11-21T13:45:52.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Supervised learning">
-<meta name="twitter:description" content="1.Linear RegressionAs an initial choice: y as a linear function of x:
-$h{\theta}(x{i})=\theta^T*x_{i}$ The cost function:
-$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
+<meta name="twitter:title" content="awk数组总结">
+<meta name="twitter:description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
+
+在读入单个文件相同时，二者相同
+在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -62,7 +65,7 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Supervised learning | Shirley Wang</title>
+<title>awk数组总结 | Shirley Wang</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -266,11 +269,11 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-machine_learning(Supervised learning &amp; Discriminative algorithm)1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-awk数组总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/" class="article-date">
-      <time datetime="2016-11-21T09:49:14.061Z" itemprop="datePublished">2016-11-21</time>
+      <a href="/2016/11/21/awk数组总结/" class="article-date">
+      <time datetime="2016-11-21T11:43:38.738Z" itemprop="datePublished">2016-11-21</time>
 </a>
 
 
@@ -285,7 +288,7 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
         
   
     <h1 class="article-title" itemprop="name">
-      Supervised learning
+      awk数组总结
     </h1>
   
 
@@ -302,14 +305,30 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-Linear-Regression"><a href="#1-Linear-Regression" class="headerlink" title="1.Linear Regression"></a>1.Linear Regression</h3><p>As an initial choice: y as a linear function of x:</p>
-<h4 id="h-theta-x-i-theta-T-x-i"><a href="#h-theta-x-i-theta-T-x-i" class="headerlink" title="$h{\theta}(x{i})=\theta^T*x_{i}$"></a>$h<em>{\theta}(x</em>{i})=\theta^T*x_{i}$</h4><p> The cost function:</p>
-<h4 id="J-theta-frac-1-2-h-theta-x-i-y-i-2"><a href="#J-theta-frac-1-2-h-theta-x-i-y-i-2" class="headerlink" title="$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$"></a>$J(\theta)=\frac{1}{2}(h<em>{\theta}(x</em>{i})-y_{i})^2$</h4><p>But why we choose the least-square cost function $J(\theta)$?<br>here is the reason:<br>Let’s assume that the target variable and input variables are related via the below equation:</p>
-<h5 id="y-i-theta-Tx-i-epsilon-i"><a href="#y-i-theta-Tx-i-epsilon-i" class="headerlink" title="$y{i}=\theta^Tx{i}+\epsilon_{i}$"></a>$y<em>{i}=\theta^Tx</em>{i}+\epsilon_{i}$</h5><p>$\epsilon<em>{i}$ refers to either <strong>unmodeled effects</strong> (such as if there are some features very pertinent to predicting housing price, but that we’d left out of the regression), or <strong>random noise</strong>.<br>**$\epsilon</em>{i}$ is  ǫ(i) are distributed IID（就是它了，传说中的独立同分布） (independently and identically distributed) accoding to Gaussian distributon**(注意用法，满足..分布并且独立同分布的说法：be distributed IDD according to Gaussian distributon),即</p>
-<h5 id="epsilon-i-sim-N-0-delta-2"><a href="#epsilon-i-sim-N-0-delta-2" class="headerlink" title="$\epsilon_{i}\sim N(0,\delta^2)$"></a>$\epsilon_{i}\sim N(0,\delta^2)$</h5><h5 id="p-epsilon-i-frac-1-sqrt-2-pi-delta-exp-frac-epsilon-i-2-2-delta-2"><a href="#p-epsilon-i-frac-1-sqrt-2-pi-delta-exp-frac-epsilon-i-2-2-delta-2" class="headerlink" title="$p(\epsilon{i})=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{\epsilon{i}^2}{2\delta^2})$"></a>$p(\epsilon<em>{i})=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{\epsilon</em>{i}^2}{2\delta^2})$</h5><p>所以是在正态分布$\epsilon<em>{i}$上加了一个$\theta^Tx$，这个时候整个$y</em>{i}$服从：</p>
-<h5 id="y-i-sim-N-theta-Tx-delta-2"><a href="#y-i-sim-N-theta-Tx-delta-2" class="headerlink" title="$y_{i}\sim N(\theta^Tx,\delta^2)$)"></a>$y_{i}\sim N(\theta^Tx,\delta^2)$)</h5><h5 id="p-y-i-x-i-theta-frac-1-sqrt-2-pi-delta-exp-frac-y-theta-Tx-2-2-delta-2"><a href="#p-y-i-x-i-theta-frac-1-sqrt-2-pi-delta-exp-frac-y-theta-Tx-2-2-delta-2" class="headerlink" title="$p(y{i} |x{i};\theta)=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y-\theta^Tx)^2}{2\delta^2})$"></a>$p(y<em>{i} |x</em>{i};\theta)=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y-\theta^Tx)^2}{2\delta^2})$</h5><p>现在想知道，出现整个已知标签$Y=(y<em>{1}…y</em>{m})$的概率，显然独立同分布用乘法</p>
-<h5 id="L-theta-prod-i-1-m-p-y-i-x-i-theta-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2"><a href="#L-theta-prod-i-1-m-p-y-i-x-i-theta-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2" class="headerlink" title="$L(\theta)=\prod{i=1}^{m}p(y{i} | x{i};\theta)=\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})$"></a>$L(\theta)=\prod<em>{i=1}^{m}p(y</em>{i} | x<em>{i};\theta)=\prod</em>{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y<em>{i}-\theta^Tx</em>{i})^2}{2\delta^2})$</h5><h5 id="LogL-theta-Log-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2-mLog-frac-1-sqrt-2-pi-delta-frac-1-2-delta-2-y-i-theta-Tx-2"><a href="#LogL-theta-Log-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2-mLog-frac-1-sqrt-2-pi-delta-frac-1-2-delta-2-y-i-theta-Tx-2" class="headerlink" title="$LogL(\theta)=Log\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})=mLog\frac{1}{\sqrt{2\pi}\delta}-\frac{1}{2\delta^2}*(y{i}-\theta^Tx)^2$"></a>$LogL(\theta)=Log\prod<em>{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y</em>{i}-\theta^Tx<em>{i})^2}{2\delta^2})=mLog\frac{1}{\sqrt{2\pi}\delta}-\frac{1}{2\delta^2}*(y</em>{i}-\theta^Tx)^2$</h5><p>由于$mLog\frac{1}{\sqrt{2\pi}\delta}$为常数，$\theta$也是常数，则最大化$LogL(\theta)$只需最小化</p>
-<h5 id="frac-1-2-y-i-theta-Tx-2-frac-1-2-h-theta-x-i-y-i-2"><a href="#frac-1-2-y-i-theta-Tx-2-frac-1-2-h-theta-x-i-y-i-2" class="headerlink" title="$\frac{1}{2}(y{i}-\theta^Tx)^2=\frac{1}{2}(h{\theta}(x{i})-y{i})^2$"></a>$\frac{1}{2}(y<em>{i}-\theta^Tx)^2=\frac{1}{2}(h</em>{\theta}(x<em>{i})-y</em>{i})^2$</h5><p>然而最小化的方法有许多种，必须掌握的是<strong>gradient descent 和Normal equation</strong></p>
+        <h3 id="一-两文件按列对应合并"><a href="#一-两文件按列对应合并" class="headerlink" title="一.两文件按列对应合并"></a>一.两文件按列对应合并</h3><h4 id="1-NR与FNR"><a href="#1-NR与FNR" class="headerlink" title="1.NR与FNR"></a>1.NR与FNR</h4><p>awk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件<br>NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。</p>
+<ul>
+<li>在读入单个文件相同时，二者相同</li>
+<li>在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(file2),即读入第二个文件时，重新从1开始计数。<br>正是由于NR和FNR的这个特点，使得我们可以区分目前所处理的record是来自file1还是file2<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;print NR,$0&#125;'</span> file1</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>1 a b c d<br>2 a b d c<br>3 a c b d<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;print FNR,$0&#125;'</span> file1</div></pre></td></tr></table></figure></p>
+<p>1 a b c d<br>2 a b d c<br>3 a c b d</p>
+<p>2,但是对于多个文件 ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;print NR,$0&#125;'</span> file1 file2</div></pre></td></tr></table></figure></p>
+<p>1 a b c d<br>2 a b d c<br>3 a c b d<br>4 aa bb cc dd<br>5 aa bb dd cc<br>6 aa cc bb dd<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;print FNR,$0&#125;'</span> file1 file2</div></pre></td></tr></table></figure></p>
+<p>1 a b c d<br>2 a b d c<br>3 a c b d<br>1 aa bb cc dd<br>2 aa bb dd cc<br>3 aa cc bb dd</p>
+<h4 id="2-结合例子谈文件合并"><a href="#2-结合例子谈文件合并" class="headerlink" title="2.结合例子谈文件合并"></a>2.结合例子谈文件合并</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat account</div></pre></td></tr></table></figure>
+<p>张三|000001<br>李四|000002<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat cdr</div></pre></td></tr></table></figure></p>
+<p>000001|10<br>000001|20<br>000002|30<br>000002|15</p>
+<p>想要得到的结果是将用户名，帐号和金额在同一行打印出来,如下:</p>
+<p>张三|000001|10<br>张三|000001|20<br>李四|000002|30<br>李四|000002|15</p>
+<p>执行如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk -F \| <span class="string">'NR==FNR&#123;a[$2]=$0;next&#125;&#123;print a[$1]"|"$2&#125;'</span> account cdr</div></pre></td></tr></table></figure></p>
+<h4 id="1-开始理解"><a href="#1-开始理解" class="headerlink" title="1.开始理解:"></a>1.开始理解:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NR==FNR a[<span class="variable">$2</span>]=<span class="variable">$0</span></div></pre></td></tr></table></figure>
+<p>读入两个文件时，先读完第一个文件，然后开始读第二个文件<br>NR==FNR时候，说明正在读入第一个文件，找到两个文件都有的，即要识别的相同列，在第一个文件中为第x列，若x=2，即第一个文件中第二列是第二个文件中也有的，可以利用其进行文件合并，则a[$2]=$p，这里的”p”视你最后需要的文本情况而定，一般为 p=0,即a[$2]=$0,把第一个文件的整行先摆出来<br>（注意：两个文件的第二列相同则以第二列作为下标，若要识别多列相同，则a[$1”\t”$2”\t”$3”\t”$4],总之，下标就是相同的部分，格式完全按照文本中相同的部分来<br>例如：文本的格式为：<br>chr1”\t”begin”\t”end”\t”reads_begain”\t”reads_end”\t”expression<br>要识别前三列相同，则a[$1”\t”$2”\t”$3”]）</p>
+<h4 id="2-逐渐明了"><a href="#2-逐渐明了" class="headerlink" title="2.逐渐明了"></a>2.逐渐明了</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NR&gt;=FNR a[<span class="variable">$2</span>]=<span class="variable">$0</span></div></pre></td></tr></table></figure>
+<p>此时读入的第二个文件了（因为NR一直增大，而FNR读第二个文件时清零，因此读入第二个文件时NR肯定就比FNR大了）<br><strong>然后这步很关键</strong>：当你执行完上一步以后,若第二个文件的第y个字段（feild）是作为用来和第一个文件合并的相同行则，print a[$y]”\t”$z”\t”$w,这里的z和w分别是第二个文件中特有的，那些你想在合并后的文件中一并显示出来的信息</p>
+<h4 id="3-总结一下"><a href="#3-总结一下" class="headerlink" title="3.总结一下"></a>3.总结一下</h4><p>文件合并前，预处理时，最好把第一个文件中，用来和第二个文件合并的列，放在第一个文件的最后一列，这样比较方便看一些</p>
+<h3 id="二"><a href="#二" class="headerlink" title="二."></a>二.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;!a[$1]&#125;&#123;a[$1]+=$2&#125;END&#123;for(i in a)&#123;print i"\t"a[i]&#125;&#125;'</span> cc</div></pre></td></tr></table></figure>
+<p>就一句话，i 是指代的数组下标，可以为任意符号，比如说<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(xiabiao <span class="keyword">in</span> a)&#123;<span class="built_in">print</span> xiabiao<span class="string">"\t"</span>a[i]&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -318,13 +337,13 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></p>
+        <p><span>Title:</span><a href="/2016/11/21/awk数组总结/">awk数组总结</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Shirley Wang</a></p>
-        <p><span>Created:</span>2016-11-21, 17:49:14</p>
-        <p><span>Updated:</span>2016-11-21, 19:04:40</p>
+        <p><span>Created:</span>2016-11-21, 19:43:38</p>
+        <p><span>Updated:</span>2016-11-21, 21:45:52</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/" title="Supervised learning">http://yoursite.com/2016/11/21/machine_learning(Supervised learning &amp; Discriminative algorithm)1/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/11/21/machine_learning(Supervised learning &amp; Discriminative algorithm)1/　　By Shirley Wang" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2016/11/21/awk数组总结/" title="awk数组总结">http://yoursite.com/2016/11/21/awk数组总结/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/11/21/awk数组总结/　　By Shirley Wang" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -336,16 +355,10 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/11/21/logistic Regression/">
-                    Logistic Regression（接Supervised learning）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/21/Windows下利用hexo和git搭建博客/">
-                    windows下利用hexo搭建博客
+                <a href="/2016/11/21/logistic Regression/">
+                    Logistic Regression（接Supervised learning）
                 </a>
             </div>
         
@@ -357,7 +370,7 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Linear-Regression"><span class="toc-number">1.</span> <span class="toc-text">1.Linear Regression</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#h-theta-x-i-theta-T-x-i"><span class="toc-number">1.1.</span> <span class="toc-text">$h{\theta}(x{i})=\theta^T*x_{i}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#J-theta-frac-1-2-h-theta-x-i-y-i-2"><span class="toc-number">1.2.</span> <span class="toc-text">$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#y-i-theta-Tx-i-epsilon-i"><span class="toc-number">1.2.1.</span> <span class="toc-text">$y{i}=\theta^Tx{i}+\epsilon_{i}$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#epsilon-i-sim-N-0-delta-2"><span class="toc-number">1.2.2.</span> <span class="toc-text">$\epsilon_{i}\sim N(0,\delta^2)$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#p-epsilon-i-frac-1-sqrt-2-pi-delta-exp-frac-epsilon-i-2-2-delta-2"><span class="toc-number">1.2.3.</span> <span class="toc-text">$p(\epsilon{i})=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{\epsilon{i}^2}{2\delta^2})$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#y-i-sim-N-theta-Tx-delta-2"><span class="toc-number">1.2.4.</span> <span class="toc-text">$y_{i}\sim N(\theta^Tx,\delta^2)$)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#p-y-i-x-i-theta-frac-1-sqrt-2-pi-delta-exp-frac-y-theta-Tx-2-2-delta-2"><span class="toc-number">1.2.5.</span> <span class="toc-text">$p(y{i} |x{i};\theta)=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y-\theta^Tx)^2}{2\delta^2})$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#L-theta-prod-i-1-m-p-y-i-x-i-theta-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2"><span class="toc-number">1.2.6.</span> <span class="toc-text">$L(\theta)=\prod{i=1}^{m}p(y{i} | x{i};\theta)=\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LogL-theta-Log-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2-mLog-frac-1-sqrt-2-pi-delta-frac-1-2-delta-2-y-i-theta-Tx-2"><span class="toc-number">1.2.7.</span> <span class="toc-text">$LogL(\theta)=Log\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})=mLog\frac{1}{\sqrt{2\pi}\delta}-\frac{1}{2\delta^2}*(y{i}-\theta^Tx)^2$</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#frac-1-2-y-i-theta-Tx-2-frac-1-2-h-theta-x-i-y-i-2"><span class="toc-number">1.2.8.</span> <span class="toc-text">$\frac{1}{2}(y{i}-\theta^Tx)^2=\frac{1}{2}(h{\theta}(x{i})-y{i})^2$</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-两文件按列对应合并"><span class="toc-number">1.</span> <span class="toc-text">一.两文件按列对应合并</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-NR与FNR"><span class="toc-number">1.1.</span> <span class="toc-text">1.NR与FNR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-结合例子谈文件合并"><span class="toc-number">1.2.</span> <span class="toc-text">2.结合例子谈文件合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-开始理解"><span class="toc-number">1.3.</span> <span class="toc-text">1.开始理解:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-逐渐明了"><span class="toc-number">1.4.</span> <span class="toc-text">2.逐渐明了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-总结一下"><span class="toc-number">1.5.</span> <span class="toc-text">3.总结一下</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二"><span class="toc-number">2.</span> <span class="toc-text">二.</span></a></li></ol>
         
     </div>
     <style>
@@ -393,7 +406,7 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Supervised learning　| Shirley Wang　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"awk数组总结　| Shirley Wang　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -413,15 +426,13 @@ $J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$But why we choose the least-sq">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/21/logistic Regression/" title="Pre: Logistic Regression（接Supervised learning）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/21/Windows下利用hexo和git搭建博客/" title="Next: windows下利用hexo搭建博客">
+            <a href="/2016/11/21/logistic Regression/" title="Next: Logistic Regression（接Supervised learning）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
