@@ -207,7 +207,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">true</div>
                 </section>
                 
             </div>
@@ -374,7 +374,7 @@
 <p>执行如下代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk -F \| <span class="string">'NR==FNR&#123;a[$2]=$0;next&#125;&#123;print a[$1]"|"$2&#125;'</span> account cdr</div></pre></td></tr></table></figure></p>
 <h4 id="1-开始理解"><a href="#1-开始理解" class="headerlink" title="1.开始理解:"></a>1.开始理解:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NR==FNR a[<span class="variable">$2</span>]=<span class="variable">$0</span></div></pre></td></tr></table></figure>
 <p>读入两个文件时，先读完第一个文件，然后开始读第二个文件<br>NR==FNR时候，说明正在读入第一个文件，找到两个文件都有的，即要识别的相同列，在第一个文件中为第x列，若x=2，即第一个文件中第二列是第二个文件中也有的，可以利用其进行文件合并，则a[$2]=$p，这里的”p”视你最后需要的文本情况而定，一般为 p=0,即a[$2]=$0,把第一个文件的整行先摆出来<br>（注意：两个文件的第二列相同则以第二列作为下标，若要识别多列相同，则a[$1”\t”$2”\t”$3”\t”$4],总之，下标就是相同的部分，格式完全按照文本中相同的部分来<br>例如：文本的格式为：<br>chr1”\t”begin”\t”end”\t”reads_begain”\t”reads_end”\t”expression<br>要识别前三列相同，则a[$1”\t”$2”\t”$3]）</p>
-<h4 id="2-逐渐明了"><a href="#2-逐渐明了" class="headerlink" title="2.逐渐明了"></a>2.逐渐明了</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NR&gt;=FNR a[<span class="variable">$2</span>]=<span class="variable">$0</span></div></pre></td></tr></table></figure>
+<h4 id="2-逐渐明了"><a href="#2-逐渐明了" class="headerlink" title="2.逐渐明了"></a>2.逐渐明了</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NR&gt;=FNR a[<span class="variable">$1</span>]=<span class="variable">$0</span></div></pre></td></tr></table></figure>
 <p>此时读入的第二个文件了（因为NR一直增大，而FNR读第二个文件时清零，因此读入第二个文件时NR肯定就比FNR大了）<br><strong>然后这步很关键</strong>：当你执行完上一步以后,若第二个文件的第y个字段（feild）是作为用来和第一个文件合并的相同行则，print a[$y]”\t”$z”\t”$w,这里的z和w分别是第二个文件中特有的，那些你想在合并后的文件中一并显示出来的信息</p>
 <h4 id="3-总结一下"><a href="#3-总结一下" class="headerlink" title="3.总结一下"></a>3.总结一下</h4><p>文件合并前，预处理时，最好把第一个文件中，用来和第二个文件合并的列，放在第一个文件的最后一列，这样比较方便看一些</p>
 <h3 id="二"><a href="#二" class="headerlink" title="二."></a>二.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;!a[$1]&#125;&#123;a[$1]+=$2&#125;END&#123;for(i in a)&#123;print i"\t"a[i]&#125;&#125;'</span> cc</div></pre></td></tr></table></figure>
@@ -1290,10 +1290,10 @@ MathJax.Hub.Queue(function() {
             
              tags: ".article-tag a", 
              categories: ".article-category a, a.tag-list-link", 
-            
+             articleNav: "#article-nav a, #post-nav-button a", 
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
-            
+             menu: ".header-menu a", 
              friends: "#js-friends a", 
              socail: ".social a" 
         }
