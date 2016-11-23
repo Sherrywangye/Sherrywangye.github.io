@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="1.perl hash
-1.1perl中出现dollar符号和{}，则说明正在使用hash arraykey==&amp;gt; value举个栗子：如果一个arrary名为family_name，最简单的给其赋值key是fred value是’filinstone’需要注意的是，key大多数时候（指不含特殊符号，如”+”来使得perl误会的时候），其外侧的单引号可以省略，但是value的单引号永远不能省">
+<meta name="description" content="per hash &amp;amp; dictionary &amp;amp; awk array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="perl hash -- python dictionary -- awk arrary">
 <meta property="og:url" content="http://yoursite.com/2016/11/22/perl hash--python dicitonary--awk array/index.html">
 <meta property="og:site_name" content="Shirley Wang">
-<meta property="og:description" content="1.perl hash
-1.1perl中出现dollar符号和{}，则说明正在使用hash arraykey==&amp;gt; value举个栗子：如果一个arrary名为family_name，最简单的给其赋值key是fred value是’filinstone’需要注意的是，key大多数时候（指不含特殊符号，如”+”来使得perl误会的时候），其外侧的单引号可以省略，但是value的单引号永远不能省">
+<meta property="og:description" content="per hash &amp;amp; dictionary &amp;amp; awk array">
 <meta property="og:image" content="http://yoursite.com/hash1.png">
 <meta property="og:image" content="http://yoursite.com/hash2.png">
-<meta property="og:updated_time" content="2016-11-23T13:24:27.407Z">
+<meta property="og:updated_time" content="2016-11-23T14:11:49.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="perl hash -- python dictionary -- awk arrary">
-<meta name="twitter:description" content="1.perl hash
-1.1perl中出现dollar符号和{}，则说明正在使用hash arraykey==&amp;gt; value举个栗子：如果一个arrary名为family_name，最简单的给其赋值key是fred value是’filinstone’需要注意的是，key大多数时候（指不含特殊符号，如”+”来使得perl误会的时候），其外侧的单引号可以省略，但是value的单引号永远不能省">
+<meta name="twitter:description" content="per hash &amp;amp; dictionary &amp;amp; awk array">
 <meta name="twitter:image" content="http://yoursite.com/hash1.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -191,7 +188,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li></ul>
                     </div>
                 </section>
                 
@@ -300,7 +297,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash/">hash</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/awk/">awk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash/">hash</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -310,12 +307,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1.perl hash</p>
-<h4 id="1-1perl中出现dollar符号和-，则说明正在使用hash-array"><a href="#1-1perl中出现dollar符号和-，则说明正在使用hash-array" class="headerlink" title="1.1perl中出现dollar符号和{}，则说明正在使用hash array"></a>1.1perl中出现dollar符号和{}，则说明正在使用hash array</h4><p>key==&gt; value<br><img src="/hash1.png" alt="啊喂~图片出错了"><br><img src="/hash2.png" alt="啊喂~图片出错了"><br>举个栗子：如果一个arrary名为family_name，最简单的给其赋值<br>key是fred value是’filinstone’<br><strong>需要注意的是，key大多数时候（指不含特殊符号，如”+”来使得perl误会的时候），其外侧的单引号可以省略，但是value的单引号永远不能省略！！</strong><br>$family_name{‘fred’} = ‘flintstone’;</p>
-<h4 id="1-2Why-use-hash"><a href="#1-2Why-use-hash" class="headerlink" title="1.2Why use hash?"></a>1.2Why use hash?</h4><p> Well, the general idea is that you’ll have one set of data <strong>“related to”</strong> another set of data.<br> In fact, if your task description includes phrases like <strong>“finding duplicates,” “unique,” “cross-reference,” or “lookup table,”</strong> it’s likely that a hash will be useful in the implementation.</p>
-<h4 id="1-3Hash-Element-Access"><a href="#1-3Hash-Element-Access" class="headerlink" title="1.3Hash Element Access"></a>1.3Hash Element Access</h4><p>To access an element of a hash, you use syntax that looks like this:<br><strong>$hash{$some_key}</strong><br>天冷了，举一个栗子怎么够？来，举好多好多个栗子！<br>①<br>$foo = ‘bar’;<br>print $family_name{ $foo . ‘ney’ };  # prints ‘rubble’<br>说明hash能够利用<strong>“.”</strong>号连接而成的字符串（perl中<strong>“.”</strong>代表字符串连接符）<br>②<br>$family_name{‘fred’} = ‘astaire’;  # gives new value to existing element $bedrock = $family_name{‘fred’};   # gets ‘astaire’; old value is lost<br>新值覆盖旧值<br>③<br>$granite = $family_name{‘larry’};  # No larry here: undef<br>$family_name中没有larry，因此$granite=undef</p>
-<h4 id="1-4The-Hash-as-a-Whole"><a href="#1-4The-Hash-as-a-Whole" class="headerlink" title="1.4The Hash as a Whole"></a>1.4The Hash as a Whole</h4><p>%some_hash = (‘foo’, 35, ‘bar’, 12.4, 2.5, ‘hello’,      ‘wilma’, 1.72e30, ‘betty’, “bye\n”);<br>赋值的时候元素个数必须是偶数！因为hash就是key==&gt;value对。否则就会<strong><em>“unwinding the hash”</em></strong><br><strong>反转key和value</strong><br>my %inverse_hash = <strong>reverse</strong> %any_hash;<br>(key, value, key, value, key, value, …).=====&gt;&gt; (value, key, value, key, value, key, …).<br>聪明的你可能已经发现了，这仅限于原hash中value也唯一的情况下<br>否则reverse后的hash就出错了~</p>
-<h4 id="1-5-Big-Arrow-and-Hash-Function"><a href="#1-5-Big-Arrow-and-Hash-Function" class="headerlink" title="1.5 Big Arrow and Hash Function"></a>1.5 Big Arrow and Hash Function</h4><p>当我们看到以下这个hash的时候，一眼很难判断”2.5”是key还是value，而需要数一数”key,value,key,value,key，value…”这就很尴尬了，不过我们的Larry大神也想到了这个问题，最终用”==&gt;”来解决这个问题<br>%some_hash = (‘foo’, 35, ‘bar’, 12.4, 2.5, ‘hello’,      ‘wilma’, 1.72e30, ‘betty’, “bye\n”)</p>
+        <p>per hash &amp; dictionary &amp; awk array</p>
+<ul>
+<li><a id="more"></a>
+1.perl hash<h4 id="1-1perl中出现dollar符号和-，则说明正在使用hash-array"><a href="#1-1perl中出现dollar符号和-，则说明正在使用hash-array" class="headerlink" title="1.1perl中出现dollar符号和{}，则说明正在使用hash array"></a>1.1perl中出现dollar符号和{}，则说明正在使用hash array</h4>key==&gt; value<br><img src="/hash1.png" alt="啊喂~图片出错了"><br><img src="/hash2.png" alt="啊喂~图片出错了"><br>举个栗子：如果一个arrary名为family_name，最简单的给其赋值<br>key是fred value是’filinstone’<br><strong>需要注意的是，key大多数时候（指不含特殊符号，如”+”来使得perl误会的时候），其外侧的单引号可以省略，但是value的单引号永远不能省略！！</strong><br>$family_name{‘fred’} = ‘flintstone’;<h4 id="1-2Why-use-hash"><a href="#1-2Why-use-hash" class="headerlink" title="1.2Why use hash?"></a>1.2Why use hash?</h4>Well, the general idea is that you’ll have one set of data <strong>“related to”</strong> another set of data.<br>In fact, if your task description includes phrases like <strong>“finding duplicates,” “unique,” “cross-reference,” or “lookup table,”</strong> it’s likely that a hash will be useful in the implementation.<h4 id="1-3Hash-Element-Access"><a href="#1-3Hash-Element-Access" class="headerlink" title="1.3Hash Element Access"></a>1.3Hash Element Access</h4>To access an element of a hash, you use syntax that looks like this:<br><strong>$hash{$some_key}</strong><br>天冷了，举一个栗子怎么够？来，举好多好多个栗子！<br>①<br>$foo = ‘bar’;<br>print $family_name{ $foo . ‘ney’ };  # prints ‘rubble’<br>说明hash能够利用<strong>“.”</strong>号连接而成的字符串（perl中<strong>“.”</strong>代表字符串连接符）<br>②<br>$family_name{‘fred’} = ‘astaire’;  # gives new value to existing element $bedrock = $family_name{‘fred’};   # gets ‘astaire’; old value is lost<br>新值覆盖旧值<br>③<br>$granite = $family_name{‘larry’};  # No larry here: undef<br>$family_name中没有larry，因此$granite=undef<h4 id="1-4The-Hash-as-a-Whole"><a href="#1-4The-Hash-as-a-Whole" class="headerlink" title="1.4The Hash as a Whole"></a>1.4The Hash as a Whole</h4>%some_hash = (‘foo’, 35, ‘bar’, 12.4, 2.5, ‘hello’,      ‘wilma’, 1.72e30, ‘betty’, “bye\n”);<br>赋值的时候元素个数必须是偶数！因为hash就是key==&gt;value对。否则就会<strong><em>“unwinding the hash”</em></strong><br><strong>反转key和value</strong><br>my %inverse_hash = <strong>reverse</strong> %any_hash;<br>(key, value, key, value, key, value, …).=====&gt;&gt; (value, key, value, key, value, key, …).<br>聪明的你可能已经发现了，这仅限于原hash中value也唯一的情况下<br>否则reverse后的hash就出错了~<h4 id="1-5-Big-Arrow-and-Hash-Function"><a href="#1-5-Big-Arrow-and-Hash-Function" class="headerlink" title="1.5 Big Arrow and Hash Function"></a>1.5 Big Arrow and Hash Function</h4>当我们看到以下这个hash的时候，一眼很难判断”2.5”是key还是value，而需要数一数”key,value,key,value,key，value…”这就很尴尬了，不过我们的Larry大神也想到了这个问题，最终用”==&gt;”来解决这个问题<br>%some_hash = (‘foo’, 35, ‘bar’, 12.4, 2.5, ‘hello’,      ‘wilma’, 1.72e30, ‘betty’, “bye\n”)</li>
+</ul>
 <p>my %last_name = (  # a hash may be a lexical variable<br>    ‘fred’   =&gt; ‘flintstone’,<br>    ‘dino’   =&gt; undef,<br>    ‘barney’ =&gt; ‘rubble’,<br>    ‘betty’  =&gt; ‘rubble’, );<br>细心的你可能发现了，还是有逗号，这些逗号都是”无害而相当方便的”~<br><strong>Hash Function:</strong><br><strong>①key&amp;value Function</strong><br>my %hash = (‘a’ =&gt; 1, ‘b’ =&gt; 2, ‘c’ =&gt; 3);<br>my @k = keys %hash;<br>my @v = values %hash;<br>顺序不一定和原hash数组中的顺序相同，但key和value的顺序一一对应<br><strong>②exit function</strong><br>if (exists $books{“dino”})<br>{  print “Hey, there’s a library card for dino!\n”;<br>}</p>
 <p><strong>③delet function</strong><br>my $person = “betty”;<br>delete $books{$person};  # Revoke the library card for $person</p>
 
@@ -329,7 +325,7 @@
         <p><span>本文标题:</span><a href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Shirley Wang</a></p>
         <p><span>发布时间:</span>2016-11-22, 09:48:51</p>
-        <p><span>最后更新:</span>2016-11-23, 21:24:27</p>
+        <p><span>最后更新:</span>2016-11-23, 22:11:49</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/22/perl hash--python dicitonary--awk array/" title="perl hash -- python dictionary -- awk arrary">http://yoursite.com/2016/11/22/perl hash--python dicitonary--awk array/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/22/perl hash--python dicitonary--awk array/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
