@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="Bayesian Network: A DAG whose nodes represent the random variables:$X_1,..,X_n$For each node $X_i$ : $P(X_i | Par_G(X_i))$$Par_G$:$X_i$的父节点BN represents the joint distribution：$P(X_1…X_i)=\prod_iP(X_i">
+<meta name="description" content="图模型一步一步">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Posibility Graphical Model">
 <meta property="og:url" content="http://yoursite.com/2016/11/21/Posibility Graphical Model/index.html">
 <meta property="og:site_name" content="Shirley Wang">
-<meta property="og:description" content="Bayesian Network: A DAG whose nodes represent the random variables:$X_1,..,X_n$For each node $X_i$ : $P(X_i | Par_G(X_i))$$Par_G$:$X_i$的父节点BN represents the joint distribution：$P(X_1…X_i)=\prod_iP(X_i">
-<meta property="og:updated_time" content="2016-11-21T11:14:23.861Z">
+<meta property="og:description" content="图模型一步一步">
+<meta property="og:updated_time" content="2016-11-30T15:43:29.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Posibility Graphical Model">
-<meta name="twitter:description" content="Bayesian Network: A DAG whose nodes represent the random variables:$X_1,..,X_n$For each node $X_i$ : $P(X_i | Par_G(X_i))$$Par_G$:$X_i$的父节点BN represents the joint distribution：$P(X_1…X_i)=\prod_iP(X_i">
+<meta name="twitter:description" content="图模型一步一步">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -185,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Awk/">Awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级数理统计/">高级数理统计</a></li></ul>
                     </div>
                 </section>
                 
@@ -293,6 +293,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高级数理统计/">高级数理统计</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -300,7 +304,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Bayesian Network: A <strong>DAG</strong> whose <strong>nodes</strong> represent the random <strong>variables</strong>:<br>$X_1,..,X_n$<br>For each node $X_i$ : $P(X_i | Par_G(X_i))$<br>$Par_G$:$X_i$的父节点<br><strong>BN</strong> represents the <strong>joint distribution</strong>：<br>$P(X_1…X_i)=\prod_iP(X_i | Par_G(X_i))$ &gt;= 0 <strong>(chain Rule)</strong><br>$\sum P(X_1…X<em>i)=1$<br>原因如下：<br>$\sum</em>{D,I,G,S,L}P=\sum_{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>而$\sum<em>LP(L|G)=1$<br>所以<br>$\sum</em>{D,I,G,S,L}P=\sum<em>{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>$=\sum</em>{D,I,G,S}P(D)P(I)P(G|D,I)P(S|I)$<br>$=\sum_{D,I}P(D)P(I)$<br>$=1$<br>如果一个节点的父节点已知，则这个节点仅仅对它自己的子节点(以及子节点的子节点)独立，而对其他非子节点都不独立</p>
+        <p>图模型一步一步</p>
+<ul>
+<li><a id="more"></a>
+Bayesian Network: A <strong>DAG</strong> whose <strong>nodes</strong> represent the random <strong>variables</strong>:<br>$X_1,..,X_n$<br>For each node $X_i$ : $P(X_i | Par_G(X_i))$<br>$Par_G$:$X_i$的父节点<br><strong>BN</strong> represents the <strong>joint distribution</strong>：<br>$P(X_1…X_i)=\prod_iP(X_i | Par_G(X_i))$ &gt;= 0 <strong>(chain Rule)</strong><br>$\sum P(X_1…X<em>i)=1$<br>原因如下：<br>$\sum</em>{D,I,G,S,L}P=\sum_{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>而$\sum<em>LP(L|G)=1$<br>所以<br>$\sum</em>{D,I,G,S,L}P=\sum<em>{D,I,G,S,L}P(D)P(I)P(G|D,I)P(S|I)P(L|G)$<br>$=\sum</em>{D,I,G,S}P(D)P(I)P(G|D,I)P(S|I)$<br>$=\sum_{D,I}P(D)P(I)$<br>$=1$<br>如果一个节点的父节点已知，则这个节点仅仅对它自己的子节点(以及子节点的子节点)独立，而对其他非子节点都不独立</li>
+</ul>
 
       
     </div>
@@ -312,7 +320,7 @@
         <p><span>本文标题:</span><a href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Shirley Wang</a></p>
         <p><span>发布时间:</span>2016-11-21, 17:40:05</p>
-        <p><span>最后更新:</span>2016-11-21, 19:14:23</p>
+        <p><span>最后更新:</span>2016-11-30, 23:43:29</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/21/Posibility Graphical Model/" title="Posibility Graphical Model">http://yoursite.com/2016/11/21/Posibility Graphical Model/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/21/Posibility Graphical Model/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -335,7 +343,7 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/21/machine_learning/">
+                <a href="/2016/11/21/ML_stanford交作业tips/">
                     Stanford machine learning tips
                 </a>
             </div>
@@ -412,13 +420,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/21/machine_learning/" title="下一篇: Stanford machine learning tips">
+            <a href="/2016/11/21/ML_stanford交作业tips/" title="下一篇: Stanford machine learning tips">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/awk数组总结/">awk数组总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/sort命令详解/">sort命令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/python 实战演练/">python实战演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning/">Stanford machine learning tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Linux下一步一步circos的安装和使用（实做实录）/">Linux下一步一步circos的安装和使用（实做实录）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/English/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/常用数学符号的LaTeX表示方法/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/awk数组总结/">awk数组总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/sort命令详解/">sort命令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/python 实战演练/">python实战演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/ML_stanford交作业tips/">Stanford machine learning tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Linux下一步一步circos的安装和使用（实做实录）/">Linux下一步一步circos的安装和使用（实做实录）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/English/">English</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/常用数学符号的LaTeX表示方法/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/hello-world/">Hello World</a></li></ul>
 
 
 

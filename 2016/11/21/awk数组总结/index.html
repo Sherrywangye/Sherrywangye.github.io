@@ -15,25 +15,16 @@
 
 
 
-<meta name="description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
-
-在读入单个文件相同时，二者相同
-在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
+<meta name="description" content="awk 两个文件合并实例及解释">
 <meta property="og:type" content="article">
 <meta property="og:title" content="awk数组总结">
 <meta property="og:url" content="http://yoursite.com/2016/11/21/awk数组总结/index.html">
 <meta property="og:site_name" content="Shirley Wang">
-<meta property="og:description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
-
-在读入单个文件相同时，二者相同
-在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
-<meta property="og:updated_time" content="2016-11-22T12:14:33.963Z">
+<meta property="og:description" content="awk 两个文件合并实例及解释">
+<meta property="og:updated_time" content="2016-11-30T15:38:04.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="awk数组总结">
-<meta name="twitter:description" content="一.两文件按列对应合并1.NR与FNRawk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。
-
-在读入单个文件相同时，二者相同
-在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(">
+<meta name="twitter:description" content="awk 两个文件合并实例及解释">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -194,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Awk/">Awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级数理统计/">高级数理统计</a></li></ul>
                     </div>
                 </section>
                 
@@ -302,6 +293,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Awk/">Awk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell/">Shell</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -309,7 +304,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="一-两文件按列对应合并"><a href="#一-两文件按列对应合并" class="headerlink" title="一.两文件按列对应合并"></a>一.两文件按列对应合并</h3><h4 id="1-NR与FNR"><a href="#1-NR与FNR" class="headerlink" title="1.NR与FNR"></a>1.NR与FNR</h4><p>awk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件<br>NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。</p>
+        <p>awk 两个文件合并实例及解释</p>
+<ul>
+<li><a id="more"></a>
+<h3 id="一-两文件按列对应合并"><a href="#一-两文件按列对应合并" class="headerlink" title="一.两文件按列对应合并"></a>一.两文件按列对应合并</h3><h4 id="1-NR与FNR"><a href="#1-NR与FNR" class="headerlink" title="1.NR与FNR"></a>1.NR与FNR</h4>awk在读入两个文件时，顺序是先全部读完第一个文件，然后开始读第二个文件<br>NR和FNR都是目前读到的行数（record数），只不过二者的计数方法略有不同。</li>
+</ul>
 <ul>
 <li>在读入单个文件相同时，二者相同</li>
 <li>在读入两个文件时，NR由1逐渐增大到length(file1)+length(file2);而FNR则由1增大到length(file1),然后由由1开始增大到length(file2),即读入第二个文件时，重新从1开始计数。<br>正是由于NR和FNR的这个特点，使得我们可以区分目前所处理的record是来自file1还是file2<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ awk <span class="string">'&#123;print NR,$0&#125;'</span> file1</div></pre></td></tr></table></figure>
@@ -344,7 +343,7 @@
         <p><span>本文标题:</span><a href="/2016/11/21/awk数组总结/">awk数组总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Shirley Wang</a></p>
         <p><span>发布时间:</span>2016-11-21, 19:43:38</p>
-        <p><span>最后更新:</span>2016-11-22, 20:14:33</p>
+        <p><span>最后更新:</span>2016-11-30, 23:38:04</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/21/awk数组总结/" title="awk数组总结">http://yoursite.com/2016/11/21/awk数组总结/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/21/awk数组总结/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -450,7 +449,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/awk数组总结/">awk数组总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/sort命令详解/">sort命令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/python 实战演练/">python实战演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning/">Stanford machine learning tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Linux下一步一步circos的安装和使用（实做实录）/">Linux下一步一步circos的安装和使用（实做实录）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/English/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/常用数学符号的LaTeX表示方法/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/awk数组总结/">awk数组总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/sort命令详解/">sort命令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/python 实战演练/">python实战演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/ML_stanford交作业tips/">Stanford machine learning tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Linux下一步一步circos的安装和使用（实做实录）/">Linux下一步一步circos的安装和使用（实做实录）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/English/">English</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/常用数学符号的LaTeX表示方法/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/hello-world/">Hello World</a></li></ul>
 
 
 
