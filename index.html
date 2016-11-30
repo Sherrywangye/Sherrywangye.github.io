@@ -186,7 +186,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Awk/">Awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级数理统计/">高级数理统计</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Awk/">Awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basic/">Basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/English/">English</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTeX/">LaTeX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Matlab/">Matlab</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/awk/">awk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sort/">sort</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/supervised-learning/">supervised learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级数理统计/">高级数理统计</a></li></ul>
                     </div>
                 </section>
                 
@@ -560,15 +560,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1-Linear-Regression"><a href="#1-Linear-Regression" class="headerlink" title="1.Linear Regression"></a>1.Linear Regression</h3><p>As an initial choice: y as a linear function of x:</p>
-<h4 id="h-theta-x-i-theta-T-x-i"><a href="#h-theta-x-i-theta-T-x-i" class="headerlink" title="$h{\theta}(x{i})=\theta^T*x_{i}$"></a>$h<em>{\theta}(x</em>{i})=\theta^T*x_{i}$</h4><p> The cost function:</p>
-<h4 id="J-theta-frac-1-2-h-theta-x-i-y-i-2"><a href="#J-theta-frac-1-2-h-theta-x-i-y-i-2" class="headerlink" title="$J(\theta)=\frac{1}{2}(h{\theta}(x{i})-y_{i})^2$"></a>$J(\theta)=\frac{1}{2}(h<em>{\theta}(x</em>{i})-y_{i})^2$</h4><p>But why we choose the least-square cost function $J(\theta)$?<br>here is the reason:<br>Let’s assume that the target variable and input variables are related via the below equation:</p>
-<h5 id="y-i-theta-Tx-i-epsilon-i"><a href="#y-i-theta-Tx-i-epsilon-i" class="headerlink" title="$y{i}=\theta^Tx{i}+\epsilon_{i}$"></a>$y<em>{i}=\theta^Tx</em>{i}+\epsilon_{i}$</h5><p>$\epsilon<em>{i}$ refers to either <strong>unmodeled effects</strong> (such as if there are some features very pertinent to predicting housing price, but that we’d left out of the regression), or <strong>random noise</strong>.<br>**$\epsilon</em>{i}$ is  ǫ(i) are distributed IID（就是它了，传说中的独立同分布） (independently and identically distributed) accoding to Gaussian distributon**(注意用法，满足..分布并且独立同分布的说法：be distributed IDD according to Gaussian distributon),即</p>
-<h5 id="epsilon-i-sim-N-0-delta-2"><a href="#epsilon-i-sim-N-0-delta-2" class="headerlink" title="$\epsilon_{i}\sim N(0,\delta^2)$"></a>$\epsilon_{i}\sim N(0,\delta^2)$</h5><h5 id="p-epsilon-i-frac-1-sqrt-2-pi-delta-exp-frac-epsilon-i-2-2-delta-2"><a href="#p-epsilon-i-frac-1-sqrt-2-pi-delta-exp-frac-epsilon-i-2-2-delta-2" class="headerlink" title="$p(\epsilon{i})=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{\epsilon{i}^2}{2\delta^2})$"></a>$p(\epsilon<em>{i})=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{\epsilon</em>{i}^2}{2\delta^2})$</h5><p>所以是在正态分布$\epsilon<em>{i}$上加了一个$\theta^Tx$，这个时候整个$y</em>{i}$服从：</p>
-<h5 id="y-i-sim-N-theta-Tx-delta-2"><a href="#y-i-sim-N-theta-Tx-delta-2" class="headerlink" title="$y_{i}\sim N(\theta^Tx,\delta^2)$)"></a>$y_{i}\sim N(\theta^Tx,\delta^2)$)</h5><h5 id="p-y-i-x-i-theta-frac-1-sqrt-2-pi-delta-exp-frac-y-theta-Tx-2-2-delta-2"><a href="#p-y-i-x-i-theta-frac-1-sqrt-2-pi-delta-exp-frac-y-theta-Tx-2-2-delta-2" class="headerlink" title="$p(y{i} |x{i};\theta)=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y-\theta^Tx)^2}{2\delta^2})$"></a>$p(y<em>{i} |x</em>{i};\theta)=\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y-\theta^Tx)^2}{2\delta^2})$</h5><p>现在想知道，出现整个已知标签$Y=(y<em>{1}…y</em>{m})$的概率，显然独立同分布用乘法</p>
-<h5 id="L-theta-prod-i-1-m-p-y-i-x-i-theta-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2"><a href="#L-theta-prod-i-1-m-p-y-i-x-i-theta-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2" class="headerlink" title="$L(\theta)=\prod{i=1}^{m}p(y{i} | x{i};\theta)=\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})$"></a>$L(\theta)=\prod<em>{i=1}^{m}p(y</em>{i} | x<em>{i};\theta)=\prod</em>{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y<em>{i}-\theta^Tx</em>{i})^2}{2\delta^2})$</h5><h5 id="LogL-theta-Log-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2-mLog-frac-1-sqrt-2-pi-delta-frac-1-2-delta-2-y-i-theta-Tx-2"><a href="#LogL-theta-Log-prod-i-1-m-frac-1-sqrt-2-pi-delta-exp-frac-y-i-theta-Tx-i-2-2-delta-2-mLog-frac-1-sqrt-2-pi-delta-frac-1-2-delta-2-y-i-theta-Tx-2" class="headerlink" title="$LogL(\theta)=Log\prod{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y{i}-\theta^Tx{i})^2}{2\delta^2})=mLog\frac{1}{\sqrt{2\pi}\delta}-\frac{1}{2\delta^2}*(y{i}-\theta^Tx)^2$"></a>$LogL(\theta)=Log\prod<em>{i=1}^{m}\frac{1}{\sqrt{2\pi\delta}}exp(-\frac{(y</em>{i}-\theta^Tx<em>{i})^2}{2\delta^2})=mLog\frac{1}{\sqrt{2\pi}\delta}-\frac{1}{2\delta^2}*(y</em>{i}-\theta^Tx)^2$</h5><p>由于$mLog\frac{1}{\sqrt{2\pi}\delta}$为常数，$\theta$也是常数，则最大化$LogL(\theta)$只需最小化</p>
-<h5 id="frac-1-2-y-i-theta-Tx-2-frac-1-2-h-theta-x-i-y-i-2"><a href="#frac-1-2-y-i-theta-Tx-2-frac-1-2-h-theta-x-i-y-i-2" class="headerlink" title="$\frac{1}{2}(y{i}-\theta^Tx)^2=\frac{1}{2}(h{\theta}(x{i})-y{i})^2$"></a>$\frac{1}{2}(y<em>{i}-\theta^Tx)^2=\frac{1}{2}(h</em>{\theta}(x<em>{i})-y</em>{i})^2$</h5><p>然而最小化的方法有许多种，必须掌握的是<strong>gradient descent 和Normal equation</strong></p>
-
+              <p>从linear regression 开始讲各种supervised learning的内在数理</p>
+<ul>
+<li>
+          
       
     </div>
     
@@ -577,6 +572,14 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/supervised-learning/">supervised learning</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
