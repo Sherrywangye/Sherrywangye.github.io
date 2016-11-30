@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Shirley Wang">
-<meta property="og:url" content="http://yoursite.com/archives/2016/11/index.html">
+<meta name="description" content="各种命令实例，方便查阅">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matlab基本操作大全">
+<meta property="og:url" content="http://yoursite.com/2016/11/30/Matlab基本操作大全/index.html">
 <meta property="og:site_name" content="Shirley Wang">
+<meta property="og:description" content="各种命令实例，方便查阅">
+<meta property="og:updated_time" content="2016-11-30T15:33:09.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shirley Wang">
+<meta name="twitter:title" content="Matlab基本操作大全">
+<meta name="twitter:description" content="各种命令实例，方便查阅">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2016/11 | Shirley Wang</title>
+<title>Matlab基本操作大全 | Shirley Wang</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -260,325 +264,172 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Matlab基本操作大全" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/30/Matlab基本操作大全/" class="archive-article-date">
-      <time datetime="2016-11-30T13:39:03.301Z" itemprop="datePublished">11-30</time>
+    <div class="article-meta">
+      <a href="/2016/11/30/Matlab基本操作大全/" class="article-date">
+      <time datetime="2016-11-30T13:39:03.301Z" itemprop="datePublished">2016-11-30</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作大全</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Matlab基本操作大全
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Basic/">Basic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Matlab/">Matlab</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>各种命令实例，方便查阅</p>
+<ul>
+<li><a id="more"></a>
+<strong>初始化</strong><br>%% Initialization<br>clear ; close all; clc<br><strong>文件读入</strong><br>my_data = fopen(‘mydata.txt’);<br>或者<br>load(‘ex6data1.mat’);<br><strong>矩阵A</strong><br>0.取子集：pos = find(y == 1)；neg = find(y == 0)；<br>1.转置：A’<br>2.矩阵的行数列数：size(A,1) size(A,2)<br>3.矩阵内元素求和：sum(A(:)) or sum(sum(A))<br>4.矩阵内元素平均：<br>a=mean(A,1) %按列平均<br>b=mean(A,2) %按行平均<br>c=mean(A(:)) %全部平均<br>5.求矩阵内最大/最小值的下标(index)<br>[index_hang index_lie]=find(A==min(min(A)));<br>[index_hang index_lie]=find(A==max(max(A)));<br>6.矩阵元素求平方、相乘（C也是矩阵）<br>A.^2<br>A.^C   </li>
+</ul>
+<p><strong>向量B</strong><br>1.转置：B’<br>2.向量长度：length(B)<br>3.向量元素求和：sum(B)<br>4.矩阵内元素平均：<br>mean(B)<br>5.求矩阵内最大/最小值的下标(index)<br>[value , index]=max(B) %最大值及其下标<br>[value , index]=min(B) %最小值及其下标</p>
+<p><strong>function</strong><br>function [C, sigma] = dataset3Params(X, y, Xval, yval)<br>%%这中间写代码<br>end<br><strong>循环语句（2016a）</strong><br>1.<br>for $A==1$<br>end<br>2.<br>if $A==1$<br>end<br>3.<br>while $A==1$<br>end</p>
+<p><strong>Math</strong><br>$e^{x}=exp()$<br>$log{x}=log(x)$<br><strong>plot</strong><br>plotData(X, y);<br>plot(1:m, error_train, 1:m, error_val);<br>title(‘Learning curve for linear regression’)<br>legend(‘Train’, ‘Cross Validation’)<br>xlabel(‘Number of training examples’)<br>ylabel(‘Error’)<br>axis([0 13 0 150])<br>plot(X(pos, 1), X(pos, 2), ‘k+’,’LineWidth’, 2,’MarkerSize’, 7);<br><strong>一些技巧</strong><br>1.暂停<br>fprintf(‘Program paused. Press enter to continue.\n’);<br>pause;</p>
+<p>hold on;<br>hold off；<br>1.判断两个字符串相同<br>strcmp(str1, str2)==1;</p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/22/perl hash--python dicitonary--awk array/" class="archive-article-date">
-      <time datetime="2016-11-22T01:48:51.719Z" itemprop="datePublished">11-22</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/awk/">awk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dictionary/">dictionary</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash/">hash</a></li></ul>
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作大全</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Shirley Wang</a></p>
+        <p><span>Created:</span>2016-11-30, 21:39:03</p>
+        <p><span>Updated:</span>2016-11-30, 23:33:09</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/11/30/Matlab基本操作大全/" title="Matlab基本操作大全">http://yoursite.com/2016/11/30/Matlab基本操作大全/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/11/30/Matlab基本操作大全/　　By Shirley Wang" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/awk数组总结/" class="archive-article-date">
-      <time datetime="2016-11-21T11:43:38.738Z" itemprop="datePublished">11-21</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/awk数组总结/">awk数组总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/logistic Regression/" class="archive-article-date">
-      <time datetime="2016-11-21T09:53:09.237Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/" class="archive-article-date">
-      <time datetime="2016-11-21T09:49:14.061Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/Windows下利用hexo和git搭建博客/" class="archive-article-date">
-      <time datetime="2016-11-21T09:43:40.554Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/sort命令详解/" class="archive-article-date">
-      <time datetime="2016-11-21T09:42:25.535Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/sort命令详解/">sort命令详解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/python 实战演练/" class="archive-article-date">
-      <time datetime="2016-11-21T09:41:49.536Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/python 实战演练/">python实战演练</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/Posibility Graphical Model/" class="archive-article-date">
-      <time datetime="2016-11-21T09:40:05.945Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/11/21/machine_learning/" class="archive-article-date">
-      <time datetime="2016-11-21T09:37:58.358Z" itemprop="datePublished">11-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/21/machine_learning/">Stanford machine learning tips</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2016/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2016/11/page/2/">Next &raquo;</a>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/11/22/perl hash--python dicitonary--awk array/">
+                    perl hash -- python dictionary -- awk arrary
+                </a>
+            </div>
+        
     </nav>
-  
 
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Matlab基本操作大全　| Shirley Wang　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/11/22/perl hash--python dicitonary--awk array/" title="Next: perl hash -- python dictionary -- awk arrary">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作大全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/22/perl hash--python dicitonary--awk array/">perl hash -- python dictionary -- awk arrary</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/awk数组总结/">awk数组总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">Supervised learning</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Windows下利用hexo和git搭建博客/">windows下利用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/sort命令详解/">sort命令详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/python 实战演练/">python实战演练</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Posibility Graphical Model/">Posibility Graphical Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/machine_learning/">Stanford machine learning tips</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/Linux下一步一步circos的安装和使用（实做实录）/">Linux下一步一步circos的安装和使用（实做实录）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/English/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/常用数学符号的LaTeX表示方法/">常用数学符号的LaTeX表示方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
