@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="logistic regression的内部原理">
+<meta name="description" content="廖雪峰python—面向对象之前的内容小结Basic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Logistic Regression（接Supervised learning）">
-<meta property="og:url" content="http://yoursite.com/2016/11/21/logistic Regression/index.html">
+<meta property="og:title" content="python programming 廖雪峰">
+<meta property="og:url" content="http://yoursite.com/2016/12/13/python programming 廖雪峰/index.html">
 <meta property="og:site_name" content="Shirley Wang">
-<meta property="og:description" content="logistic regression的内部原理">
-<meta property="og:updated_time" content="2016-11-30T15:41:23.265Z">
+<meta property="og:description" content="廖雪峰python—面向对象之前的内容小结Basic">
+<meta property="og:updated_time" content="2016-12-13T09:57:30.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Logistic Regression（接Supervised learning）">
-<meta name="twitter:description" content="logistic regression的内部原理">
+<meta name="twitter:title" content="python programming 廖雪峰">
+<meta name="twitter:description" content="廖雪峰python—面向对象之前的内容小结Basic">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Logistic Regression（接Supervised learning） | Shirley Wang</title>
+<title>python programming 廖雪峰 | Shirley Wang</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -271,11 +271,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-logistic Regression" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-python programming 廖雪峰" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/21/logistic Regression/" class="article-date">
-      <time datetime="2016-11-21T09:53:09.237Z" itemprop="datePublished">2016-11-21</time>
+      <a href="/2016/12/13/python programming 廖雪峰/" class="article-date">
+      <time datetime="2016-12-13T09:19:58.116Z" itemprop="datePublished">2016-12-13</time>
 </a>
 
 
@@ -290,7 +290,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Logistic Regression（接Supervised learning）
+      python programming 廖雪峰
     </h1>
   
 
@@ -301,7 +301,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-learning/">Machine learning</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -311,10 +311,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>logistic regression的内部原理</p>
+        <p>廖雪峰python—面向对象之前的内容小结<br><strong>Basic</strong></p>
 <ul>
 <li><a id="more"></a>
-<h3 id="2-Logistic-Regression-Classification-actually"><a href="#2-Logistic-Regression-Classification-actually" class="headerlink" title="2.Logistic Regression(Classification actually)"></a>2.Logistic Regression(Classification actually)</h3><h4 id="h-theta-x-g-theta-Tx-frac-1-1-e-theta-x"><a href="#h-theta-x-g-theta-Tx-frac-1-1-e-theta-x" class="headerlink" title="$h_{\theta}(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta x}}$"></a>$h_{\theta}(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta x}}$</h4><h4 id="frac-partial-g-partial-x-frac-1-1-e-z-1-frac-1-1-e-z-g-z-1-g-z"><a href="#frac-partial-g-partial-x-frac-1-1-e-z-1-frac-1-1-e-z-g-z-1-g-z" class="headerlink" title="$\frac{\partial g}{\partial x}= \frac{1}{1+e^-z}(1 - \frac{1}{1+e^-z})=g(z)(1-g(z))$"></a>$\frac{\partial g}{\partial x}= \frac{1}{1+e^-z}(1 - \frac{1}{1+e^-z})=g(z)(1-g(z))$</h4>基于假设：<br>$p(y=1 | x;\theta)=h(\theta)$<br>$p(y=0 | x;\theta)=1-h(\theta)$<br>使用最大似然法结合梯度下降，也可以得出：<br>$\theta_j : = \theta<em>j + \alpha(h</em>{\theta}(x_{i})-y_i) x<em>j$<br>如果使用Newton’s method for finding a zero of a function：(整个就叫做<strong>Fisher scoring</strong>)<br>$\theta :=\theta-\frac{l’’(\theta)}{l’(\theta)}$<br>$\theta :=\theta - H^{-1}\nabla</em>{\theta}l(\theta)$<br>$H_ij=\frac{\partial^2l(\theta)}{\partial \theta_i \partial \theta_j}$<h3 id="3-Overfitting-amp-Regularization"><a href="#3-Overfitting-amp-Regularization" class="headerlink" title="3.Overfitting &amp; Regularization"></a>3.Overfitting &amp; Regularization</h3><h3 id="4-Generalized-Linear-Model"><a href="#4-Generalized-Linear-Model" class="headerlink" title="4.Generalized Linear Model"></a>4.Generalized Linear Model</h3><h3 id="5-Generalized-Linear-Model"><a href="#5-Generalized-Linear-Model" class="headerlink" title="5.Generalized Linear Model"></a>5.Generalized Linear Model</h3>如果x有n个那么二次（quardratic）的特征大约有$x^{2}/2$个！<br>神经网络是多””层”[这个就是神经网络不用$x_1 x2…x_n$而用其产生的$a^{(1)}a^{(2)}a^{(3)}$]的logsitc</li>
+<h4 id="1-字符串与编码"><a href="#1-字符串与编码" class="headerlink" title="1.字符串与编码"></a>1.字符串与编码</h4>字符编码基本原理：</li>
+</ul>
+<ul>
+<li>ASCII码:1个字符由1个字节表示–8个比特（bit）作为一个字节（byte）,但是汉字数量庞大，用1个字节无法唯一编码</li>
+<li>Unicode:1个字符由两个字节表示，共16个bits，只需用一个字节表示的英文字符，在前面加8个0<br>把所有语言都统一到一套编码里，这样就不会再有乱码问题，但是如果都输入英文，则存储空间变成了原来的2倍</li>
+<li>UTF-8 : 因此，使用UTF-8,常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节<br><strong>在计算机内存中，统一使用Unicode编码，当需要保存到硬盘或者需要传输的时候，就转换为UTF-8编码</strong><br>浏览网页的时候，服务器会把动态生成的Unicode内容转换为UTF-8再传输到浏览器，所以你看到很多网页的源码上会有类似meta charset=”UTF-8”的信息，表示该网页正是用的UTF-8编码<br>python 的字符串</li>
 </ul>
 
       
@@ -324,13 +329,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/21/logistic Regression/">Logistic Regression（接Supervised learning）</a></p>
+        <p><span>本文标题:</span><a href="/2016/12/13/python programming 廖雪峰/">python programming 廖雪峰</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Shirley Wang</a></p>
-        <p><span>发布时间:</span>2016-11-21, 17:53:09</p>
-        <p><span>最后更新:</span>2016-11-30, 23:41:23</p>
+        <p><span>发布时间:</span>2016-12-13, 17:19:58</p>
+        <p><span>最后更新:</span>2016-12-13, 17:57:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/21/logistic Regression/" title="Logistic Regression（接Supervised learning）">http://yoursite.com/2016/11/21/logistic Regression/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/21/logistic Regression/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/13/python programming 廖雪峰/" title="python programming 廖雪峰">http://yoursite.com/2016/12/13/python programming 廖雪峰/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/12/13/python programming 廖雪峰/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -343,15 +348,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/11/21/awk数组总结/">
-                    awk数组总结
+                <a href="/2016/12/22/Advanced R/">
+                    《Advanced R》 学习笔记
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/">
-                    Supervised learning
+                <a href="/2016/12/10/jupyter大法好/">
+                    Jupyter大法好
                 </a>
             </div>
         
@@ -363,7 +368,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Logistic-Regression-Classification-actually"><span class="toc-number">1.</span> <span class="toc-text">2.Logistic Regression(Classification actually)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#h-theta-x-g-theta-Tx-frac-1-1-e-theta-x"><span class="toc-number">1.1.</span> <span class="toc-text">$h_{\theta}(x)=g(\theta^Tx)=\frac{1}{1+e^{-\theta x}}$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#frac-partial-g-partial-x-frac-1-1-e-z-1-frac-1-1-e-z-g-z-1-g-z"><span class="toc-number">1.2.</span> <span class="toc-text">$\frac{\partial g}{\partial x}= \frac{1}{1+e^-z}(1 - \frac{1}{1+e^-z})=g(z)(1-g(z))$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Overfitting-amp-Regularization"><span class="toc-number">2.</span> <span class="toc-text">3.Overfitting & Regularization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Generalized-Linear-Model"><span class="toc-number">3.</span> <span class="toc-text">4.Generalized Linear Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Generalized-Linear-Model"><span class="toc-number">4.</span> <span class="toc-text">5.Generalized Linear Model</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-字符串与编码"><span class="toc-number">1.</span> <span class="toc-text">1.字符串与编码</span></a></li></ol>
         
     </div>
     <style>
@@ -399,7 +404,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Logistic Regression（接Supervised learning）　| Shirley Wang　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"python programming 廖雪峰　| Shirley Wang　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -418,8 +423,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2016/11/21/logistic Regression/';
-            this.page.identifier = '2016/11/21/logistic Regression/';
+            this.page.url = 'http://yoursite.com/2016/12/13/python programming 廖雪峰/';
+            this.page.identifier = '2016/12/13/python programming 廖雪峰/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -441,7 +446,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/21/awk数组总结/" title="上一篇: awk数组总结">
+            <a href="/2016/12/22/Advanced R/" title="上一篇: 《Advanced R》 学习笔记">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -449,7 +454,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/11/21/machine_learning(Supervised learning & Discriminative algorithm)1/" title="下一篇: Supervised learning">
+            <a href="/2016/12/10/jupyter大法好/" title="下一篇: Jupyter大法好">
                 <i class="fa fa-angle-right"></i>
             </a>
         
