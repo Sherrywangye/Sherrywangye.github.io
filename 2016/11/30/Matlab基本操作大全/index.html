@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/30/Matlab基本操作大全/index.html">
 <meta property="og:site_name" content="Shirley Wang">
 <meta property="og:description" content="各种命令实例，方便查阅">
-<meta property="og:updated_time" content="2016-12-23T02:49:27.153Z">
+<meta property="og:updated_time" content="2016-12-23T03:07:30.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Matlab基本操作">
 <meta name="twitter:description" content="各种命令实例，方便查阅">
@@ -304,11 +304,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>各种命令实例，方便查阅</p>
-<ul>
-<li><a id="more"></a>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2>%% Initialization<br>clear ; close all; clc<h2 id="文件读入"><a href="#文件读入" class="headerlink" title="文件读入"></a>文件读入</h2>my_data = fopen(‘mydata.txt’);<br>或者<br>load(‘ex6data1.mat’);<h2 id="矩阵A"><a href="#矩阵A" class="headerlink" title="矩阵A"></a>矩阵A</h2>0.取子集：pos = find(y == 1)；neg = find(y == 0)；<br>1.转置：A’<br>2.矩阵的行数列数：size(A,1) size(A,2)<br>3.矩阵内元素求和：sum(A(:)) or sum(sum(A))<br>4.矩阵内元素平均：<br>a=mean(A,1) %按列平均<br>b=mean(A,2) %按行平均<br>c=mean(A(:)) %全部平均<br>5.求矩阵内最大/最小值的下标(index)<br>[index_hang index_lie]=find(A==min(min(A)));<br>[index_hang index_lie]=find(A==max(max(A)));<br>6.矩阵元素求平方、相乘（C也是矩阵）<br>A.^2<br>A.^C   </li>
-</ul>
+        <p>各种命令实例，方便查阅<br><a id="more"></a></p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>%% Initialization<br>clear ; close all; clc</p>
+<h2 id="文件读入"><a href="#文件读入" class="headerlink" title="文件读入"></a>文件读入</h2><p>my_data = fopen(‘mydata.txt’);<br>或者<br>load(‘ex6data1.mat’);</p>
+<h2 id="矩阵A"><a href="#矩阵A" class="headerlink" title="矩阵A"></a>矩阵A</h2><p>0.取子集：pos = find(y == 1)；neg = find(y == 0)；<br>1.转置：A’<br>2.矩阵的行数列数：size(A,1) size(A,2)<br>3.矩阵内元素求和：sum(A(:)) or sum(sum(A))<br>4.矩阵内元素平均：<br>a=mean(A,1) %按列平均<br>b=mean(A,2) %按行平均<br>c=mean(A(:)) %全部平均<br>5.求矩阵内最大/最小值的下标(index)<br>[index_hang index_lie]=find(A==min(min(A)));<br>[index_hang index_lie]=find(A==max(max(A)));<br>6.矩阵元素求平方、相乘（C也是矩阵）<br>A.^2<br>A.^C   </p>
 <h2 id="向量B"><a href="#向量B" class="headerlink" title="向量B"></a>向量B</h2><p>1.转置：B’<br>2.向量长度：length(B)<br>3.向量元素求和：sum(B)<br>4.矩阵内元素平均：<br>mean(B)<br>5.求矩阵内最大/最小值的下标(index)<br>[value , index]=max(B) %最大值及其下标<br>[value , index]=min(B) %最小值及其下标</p>
 <h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><p>function [C, sigma] = dataset3Params(X, y, Xval, yval)<br>%%这中间写代码<br>end</p>
 <h2 id="循环语句（2016a）"><a href="#循环语句（2016a）" class="headerlink" title="循环语句（2016a）"></a>循环语句（2016a）</h2><p>1.<br>for $A==1$<br>end<br>2.<br>if $A==1$<br>end<br>3.<br>while $A==1$<br>end</p>
@@ -327,7 +326,7 @@
         <p><span>本文标题:</span><a href="/2016/11/30/Matlab基本操作大全/">Matlab基本操作</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Shirley Wang</a></p>
         <p><span>发布时间:</span>2016-11-30, 21:39:03</p>
-        <p><span>最后更新:</span>2016-12-23, 10:49:27</p>
+        <p><span>最后更新:</span>2016-12-23, 11:07:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/30/Matlab基本操作大全/" title="Matlab基本操作">http://yoursite.com/2016/11/30/Matlab基本操作大全/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/30/Matlab基本操作大全/　　作者: Shirley Wang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
